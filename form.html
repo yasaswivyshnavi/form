@@ -12,10 +12,12 @@
             var firstname=document.getElementById("firstname").value
             var mobile=document.getElementById("mobile").value
             var email=document.getElementById("email").value
+            var password=document.getElementById("password").value
             var DOB=document.getElementById("DOB").value
             var firstnamecheck=/^[a-zA-Z]+$/
             var mobilecheck=/^[0-9]{10}$/
-            var emailcheck=/^[a-z0-9.#]+@[a-z]+\.[a-z]{2,3}$/     
+            var emailcheck=/^[a-z0-9.#]+@[a-z]+\.[a-z]{2,3}$/ 
+            var passwordcheck=/^[a-zA-Z0-9!@#$%*^&]$/
             var DOBcheck=/^[0-9]{2}+-[0-9]{2}+-[0-9]{4}$/ 
             if(firstname==""||firstname.length<3)
             { 
@@ -37,6 +39,10 @@
                 alert("enter correct date of birth")
                 return false
             }
+             if(!password.match(passwordcheck)){
+                alert("enter correct password")
+                return false
+            }
             return true
         
     }
@@ -45,6 +51,7 @@
         <p><input type="text" placeholder="enter your firstname" id="firstname" ><br><br>
             <input type="number" placeholder="enter your number" id="mobile"><br><br>
        <input type="text" placeholder="enter your email" id="email"><br><br>
+        <input type="password" placeholder="enter password" id="password"><br><br>
        <input type="date"  id="DOB"><br><br>
        gender <br><br>
        <input type="radio" name="person">male <br><br>
